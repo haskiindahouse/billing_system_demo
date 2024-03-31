@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  billing-server:
+    build: .
+    ports:
+      - 8082:9999
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ~/tmpk/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=tmpk
+      - POSTGRES_USER=tmpk
+      - POSTGRES_DB=tmpk
+  web:
+    build: ./web
+    ports:
+      - 3000:3000
