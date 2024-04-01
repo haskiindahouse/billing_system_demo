@@ -2,7 +2,7 @@
 
 # ATTENTION
 
-This system was tested on M2 Apple MacBook Pro 2021.
+This system was tested on Apple M2 Max 2023.
 
 # Billing System
 
